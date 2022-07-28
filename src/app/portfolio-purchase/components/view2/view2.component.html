@@ -1,0 +1,60 @@
+<section class="view2">
+
+  <app-reverseatom> </app-reverseatom>
+
+
+  <article class="container__form">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="save($event)"
+      class="form"
+      action="" >
+      <h4>Indique los siguientes datos para continuar con la solicitud de su adelanto de pensión:</h4>
+
+
+      <label for=""> ¿Cuál es el valor total de sus ingresos mensuales?</label>
+      <input placeholder="" formControlName="ingresos" type="number">
+
+      <label for=""> ¿Cuál es su actividad laboral actual?</label>
+      <input placeholder="ej:Empleado" formControlName="name"  type="text">
+
+      <label for=""> ¿Cuál es el nombre de su empresa?</label>
+      <input placeholder="" formControlName="name" type="text">
+
+      <label for=""> ¿Qué tipo de contrato tiene?</label>
+      <input placeholder="ejTérmino indefinido" formControlName="text" type="text">
+
+      <label for=""> ¿Cuál es su ciudad de residencia?</label>
+      <input placeholder="" formControlName="name" type="text">
+
+      <label for=""> ¿Cuál es su dirección de residencia?</label>
+      <input placeholder="ej:Carrera 9 # 116 - 08, Bogotá" formControlName="address" type="text">
+
+      <label for=""> Si está recibiendo ayuda de un asesor del Banco, ingrese el código del asesor:</label>
+      <input placeholder="" formControlName="assesorCode" type="number">
+
+
+
+      <div class="view2__continue" >
+
+        <button
+          [disabled]="form.invalid"
+          type="submit"
+          class="button__continue"
+
+        >
+          Contituar
+        </button>
+
+      </div>
+    </form>
+
+  </article>
+
+  <div class="modal" *ngIf="modalSwitch == true">
+    <app-modal ></app-modal>
+  </div>
+
+
+
+</section>

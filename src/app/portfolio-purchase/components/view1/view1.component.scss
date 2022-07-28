@@ -1,0 +1,23 @@
+.view1{
+  color: #575756;
+  font-size: 14px;
+
+
+  &__items{
+    padding: 0;
+    margin: 30px;
+    li{
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+    }
+  }
+  &__continue{
+    font-size: 12px;
+    margin: 0 40px;
+    text-align: center;
+    div{
+      margin-bottom: 30px;
+    }
+  }
+}
