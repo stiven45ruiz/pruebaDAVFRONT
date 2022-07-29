@@ -1,0 +1,99 @@
+@mixin shadow {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+
+.view3{
+  color: #575757;
+  font-size: 14px;
+  &__form{
+    border-radius: 10px;
+    padding: 10px;
+    @include shadow();
+    margin: 10px;
+    fieldset{
+      border: none;
+      margin: 10px 0;
+      legend{
+        font-weight: 700;
+      }
+    }
+    .waytopay {
+      font-weight: 400;
+    }
+  }
+  .coverage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 5px;
+    @include shadow();
+    &__input input[type=radio]:not(:checked) + i{
+      background: #00db71;
+      margin: 10px;
+    }
+    &__input{
+      display: flex;
+      flex-direction: row;
+      label{
+        font-size: 12px;
+        span{
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+      .coverage__text{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+      }
+    }
+  }
+  &__continue{
+    text-align: center;
+    .button__continue:disabled{
+      cursor: no-drop;
+      background-color: #939393;
+    }
+  }
+
+}
+
+
+.invoice{
+  border-radius: 10px;
+  @include shadow();
+  margin: 10px;
+  padding-bottom: 20px;
+  &__title{
+    background-color: #575757;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+    padding: 5px;
+    padding-left: 15px;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    &--status{
+      img{
+        margin-right: 10px;
+      }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+  }
+  &__data{
+    margin: 20px;
+  }
+}
+
+
+

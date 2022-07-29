@@ -1,1 +1,120 @@
-<p>view3 works!</p>
+<div class="view3">
+
+  <app-reverseatom *ngIf="!finalized"> </app-reverseatom>
+
+  <form
+    *ngIf="!finalized"
+    novalidate
+    [formGroup]="form"
+    (ngSubmit)="saveForm($event)"
+  >
+    <div class="view3__form">
+      <fieldset>
+        <legend>¿Cómo quiere pagar su seguro?</legend>
+
+        <label class="waytopay" for="">
+          <input
+            value="Mensual"
+            type="radio"
+            formControlName="waytopay"
+            >Mensual</label>
+
+        <label class="waytopay" for="">
+          <input
+            value="Anual"
+            type="radio"
+            formControlName="waytopay"
+            >Anual</label>
+
+      </fieldset>
+
+
+      <fieldset>
+      <legend>Seleccione el tipo de cobertura que desea adquirir:</legend>
+        <div class="coverage" >
+          <div class="coverage__input">
+            <input
+              class="input"
+              type="radio"
+              value="Familiar - $106.200"
+              formControlName="coverage"
+
+              >
+            <label class="coverage__text" for="">Cobertura familiar <span>$106.200</span></label>
+          </div>
+
+          <img src="../../../../assets/images/photo-1475503572774-15a45e5d60b9.png" alt="">
+        </div>
+        <div  class="coverage">
+          <div class="coverage__input">
+            <input
+              value="Personal - $56.600"
+              type="radio"
+              formControlName="coverage"
+              >
+            <label class="coverage__text" for="">Cobertura personal<span>$56.600</span></label>
+          </div>
+          <img src="../../../../assets/images/photo-1502791451862-7bd8c1df43a7.png" alt="">
+        </div>
+      </fieldset>
+
+    </div>
+
+    <div class="view3__continue" >
+
+      <button
+        [disabled]="!form.valid"
+        type="submit"
+        class="button__continue"
+
+      >
+        Contituar
+      </button>
+
+    </div>
+  </form>
+
+  <section *ngIf="finalized">
+    <article class="invoice">
+      <h5 class="invoice__title">Adelanto de pensión y seguro</h5>
+      <section class="invoice__info">
+        <div class="invoice__info--status">
+          <img src="../../../../assets/images/Grupo_172.png" alt="check">
+          <strong>Los productos fueron aprobados satisfactoriamente.</strong>
+        </div>
+        <p>En un un plazo máximo de 5 días calendario, se le informará por medio de un mensaje de texto el estado de sus productos.</p>
+      </section>
+      <section class="invoice__data">
+        <div class="invoice__data--status">
+          <strong>Adelanto de pensión:</strong>
+          <p> Aprobado</p>
+        </div>
+        <div class="invoice__data--status">
+          <strong>Tipo de seguro:</strong>
+          <p> {{infoOperation.coverage}} {{infoOperation.waytopay}}</p>
+        </div>
+        <div class="invoice__data--status">
+          <strong>Fecha y hora:</strong>
+          <p>  {{date}}</p>
+        </div>
+      </section>
+
+
+    </article>
+
+    <div class="view3__continue" >
+      <button
+        type="button"
+        class="button__continue"
+        (click)="finish()"
+      >
+        Finalizar
+      </button>
+
+    </div>
+  </section>
+
+
+
+
+</div>

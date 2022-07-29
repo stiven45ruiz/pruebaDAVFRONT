@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule ,FormControl,FormGroup, Validator, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view3',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class View3Component implements OnInit {
 
-  constructor() { }
+  finalized!: boolean;
+  infoOperation: any;
+  date: any
+
+  form = new FormGroup({
+    waytopay: new FormControl ('',[Validators.required]),
+    coverage: new FormControl ('',[Validators.required]),
+
+  });
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+  finish(){
+    this.router.navigate(['./home']);
+  }
+  saveForm(event:Event){
+    event.preventDefault();
+
+    if(this.form.valid){
+      this.finalized = true
+
+      console.log(this.form.value)
+      this.infoOperation = this.form.value
+
+      this.date = new Date()
+    }
   }
 
 }
