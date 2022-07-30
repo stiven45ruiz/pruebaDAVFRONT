@@ -1,6 +1,14 @@
-# Davivienda
+# PruebaDavivienda
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+
+## Clone project
+Run `git clone https://github.com/stiven45ruiz/pruebaDAVFRONT.git`
+
+## Install dependencies
+Run `npm i` or `npm install`
+
+In the project folder run `npm install -g @angular/cli`
 
 ## Development server
 
